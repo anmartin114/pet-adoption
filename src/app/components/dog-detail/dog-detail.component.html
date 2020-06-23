@@ -1,0 +1,68 @@
+<div class="header">
+  <h1>{{ currentDog.name }}</h1>
+</div>
+<div *ngIf="currentDog.photos" class="photos">
+  <div *ngIf="currentDog.photos[0] !== undefined">
+    <img src="{{ currentDog.photos[0].medium }}" />
+  </div>
+  <div *ngIf="currentDog.photos[1] !== undefined">
+    <img src="{{ currentDog.photos[1].medium }}" />
+  </div>
+  <div *ngIf="currentDog.photos[2] !== undefined">
+    <img src="{{ currentDog.photos[2].medium }}" />
+  </div>
+</div>
+<div class="text">
+  <h2>{{ currentDog.name }} is currently {{ currentDog.status }}</h2>
+  <p class="location">
+    Located in {{ currentDog.contact.address.city }},
+    {{ currentDog.contact.address.state }}
+  </p>
+  <div class="breeds">
+    <p>{{ currentDog.breeds.primary }}</p>
+    <p>{{ currentDog.breeds.secondary }}</p>
+  </div>
+  <div class="info">
+    <p>{{ currentDog.age }}</p>
+    <p>{{ currentDog.gender }}</p>
+    <p>{{ currentDog.size }}</p>
+  </div>
+  <div class="things">
+    <div class="attributes">
+      <p>Spayed/ neuterd: {{ currentDog.attributes.spayed_neutered }}</p>
+      <p>House Trained: {{ currentDog.attributes.house_trained }}</p>
+      <p>Special Needs: {{ currentDog.attributes.special_needs }}</p>
+      <p>Shots Current: {{ currentDog.attributes.shots_current }}</p>
+    </div>
+    <div class="environment">
+      <p class="q">Comfortable in a home with:</p>
+      <span>
+        <p>Children: {{ currentDog.environment.children }}</p>
+        <p class="unknown" *ngIf="currentDog.environment.children === null">
+          unknown
+        </p>
+      </span>
+      <span>
+        <p>Dogs: {{ currentDog.environment.dogs }}</p>
+        <p class="unkown" *ngIf="currentDog.environment.dogs === null">
+          unknown
+        </p>
+      </span>
+      <span>
+        <p>Cats: {{ currentDog.environment.cats }}</p>
+        <p class="unkown" *ngIf="currentDog.environment.cats === null">
+          unknown
+        </p>
+      </span>
+    </div>
+  </div>
+  <div class="bottom">
+    <p class="tags">{{ currentDog.tags }}</p>
+    <p>{{ currentDog.description }}</p>
+
+    <p>
+      Learn more about {{ currentDog.name }}
+      <a href="{{ currentDog.url }}">here</a>
+    </p>
+  </div>
+</div>

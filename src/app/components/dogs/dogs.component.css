@@ -1,0 +1,49 @@
+a {
+  text-decoration: none;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+}
+
+.info p {
+  margin-right: 8px;
+}
+
+.img {
+  height: 250px;
+  width: 100%;
+  background-color: aquamarine;
+}
+
+li {
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.breeds {
+  display: flex;
+  justify-content: center;
+}
+
+.breeds p {
+  margin-right: 8px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 1rem;
+}

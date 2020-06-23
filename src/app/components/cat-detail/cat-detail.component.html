@@ -1,0 +1,68 @@
+<div class="header">
+  <h1>{{ currentCat.name }}</h1>
+</div>
+<div *ngIf="currentCat.photos" class="photos">
+  <div *ngIf="currentCat.photos[0] !== undefined">
+    <img src="{{ currentCat.photos[0].medium }}" />
+  </div>
+  <div *ngIf="currentCat.photos[1] !== undefined">
+    <img src="{{ currentCat.photos[1].medium }}" />
+  </div>
+  <div *ngIf="currentCat.photos[2] !== undefined">
+    <img src="{{ currentCat.photos[2].medium }}" />
+  </div>
+</div>
+<div class="text">
+  <h2>{{ currentCat.name }} is currently {{ currentCat.status }}</h2>
+  <p class="location">
+    Located in {{ currentCat.contact.address.city }},
+    {{ currentCat.contact.address.state }}
+  </p>
+  <div class="breeds">
+    <p>{{ currentCat.breeds.primary }}</p>
+    <p>{{ currentCat.breeds.secondary }}</p>
+  </div>
+  <div class="info">
+    <p>{{ currentCat.age }}</p>
+    <p>{{ currentCat.gender }}</p>
+    <p>{{ currentCat.size }}</p>
+  </div>
+  <div class="things">
+    <div class="attributes">
+      <p>Spayed/ neuterd: {{ currentCat.attributes.spayed_neutered }}</p>
+      <p>House Trained: {{ currentCat.attributes.house_trained }}</p>
+      <p>Special Needs: {{ currentCat.attributes.special_needs }}</p>
+      <p>Shots Current: {{ currentCat.attributes.shots_current }}</p>
+    </div>
+    <div class="environment">
+      <p class="q">Comfortable in a home with:</p>
+      <span>
+        <p>Children: {{ currentCat.environment.children }}</p>
+        <p class="unknown" *ngIf="currentCat.environment.children === null">
+          unknown
+        </p>
+      </span>
+      <span>
+        <p>Dogs: {{ currentCat.environment.dogs }}</p>
+        <p class="unkown" *ngIf="currentCat.environment.dogs === null">
+          unknown
+        </p>
+      </span>
+      <span>
+        <p>Cats: {{ currentCat.environment.cats }}</p>
+        <p class="unkown" *ngIf="currentCat.environment.cats === null">
+          unknown
+        </p>
+      </span>
+    </div>
+  </div>
+  <div class="bottom">
+    <p class="tags">{{ currentCat.tags }}</p>
+    <p>{{ currentCat.description }}</p>
+
+    <p>
+      Learn more about {{ currentCat.name }}
+      <a href="{{ currentCat.url }}">here</a>
+    </p>
+  </div>
+</div>

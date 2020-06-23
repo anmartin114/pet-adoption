@@ -1,0 +1,30 @@
+<div class="header">
+  <h1>Dogs 🐶</h1>
+  <button class="favButton" [routerLink]="['/favorites/']">
+    My Favorites 💗
+  </button>
+</div>
+<ul>
+  <li *ngFor="let dog of Dogs; index as id">
+    <a [routerLink]="['/dogs/', id]">
+      <h2>{{ dog.name }}</h2>
+
+      <div *ngIf="dog.photos[0] !== undefined" class="img">
+        <img src="{{ dog.photos[0].medium }}" />
+      </div>
+    </a>
+    <div class="breeds">
+      <p>{{ dog.breeds.primary }}</p>
+      <div class="breeds" *ngIf="dog.breeds.secondary !== null">
+        <p>•</p>
+        <p>{{ dog.breeds.secondary }}</p>
+      </div>
+    </div>
+    <div class="info">
+      <p>{{ dog.age }} •</p>
+      <p>{{ dog.gender }} •</p>
+      <p>{{ dog.size }}</p>
+    </div>
+    <button (click)="addFavoriteDog(dog)">Add to Favorites 💗</button>
+  </li>
+</ul>

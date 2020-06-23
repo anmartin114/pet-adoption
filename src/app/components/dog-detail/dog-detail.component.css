@@ -1,0 +1,58 @@
+.photos {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #8d1d67;
+  margin-top: 20px;
+}
+
+.photos img {
+  margin: 15px 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+}
+
+.info p {
+  margin-right: 8px;
+}
+
+.text {
+  width: 60%;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  margin: 15px auto;
+}
+.breeds {
+  text-align: center;
+}
+
+.location {
+  text-align: center;
+  font-weight: bold;
+}
+.things {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+span {
+  display: flex;
+}
+
+.unkown {
+  margin-left: 5px;
+}
+
+.bottom {
+  margin-top: 20px;
+  width: 80%;
+  margin: auto;
+}
+
+.q {
+  font-weight: bold;
+}
