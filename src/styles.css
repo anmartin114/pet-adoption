@@ -35,7 +35,14 @@ button {
   cursor: pointer;
 }
 
-.favButton {
+button:hover {
+  background-color: #8d1d67;
+  color: white;
+}
+
+.favButton,
+.back,
+.home {
   color: #00023f;
   background-color: #8d1d67;
   text-align: center;

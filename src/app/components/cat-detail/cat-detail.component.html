@@ -1,5 +1,6 @@
 <div class="header">
   <h1>{{ currentCat.name }}</h1>
+  <button class="back" [routerLink]="['/cats/']">Back to Cats 🐱</button>
 </div>
 <div *ngIf="currentCat.photos" class="photos">
   <div *ngIf="currentCat.photos[0] !== undefined">
@@ -64,5 +65,10 @@
       Learn more about {{ currentCat.name }}
       <a href="{{ currentCat.url }}">here</a>
     </p>
+    <div class="f">
+      <button (click)="addFavoriteCat(currentCat)">
+        Add to Favorites 💗
+      </button>
+    </div>
   </div>
 </div>

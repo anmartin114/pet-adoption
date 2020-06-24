@@ -1,5 +1,6 @@
 <div class="header">
   <h1>{{ currentDog.name }}</h1>
+  <button class="back" [routerLink]="['/dogs/']">Back to Dogs 🐶</button>
 </div>
 <div *ngIf="currentDog.photos" class="photos">
   <div *ngIf="currentDog.photos[0] !== undefined">
@@ -64,5 +65,10 @@
       Learn more about {{ currentDog.name }}
       <a href="{{ currentDog.url }}">here</a>
     </p>
+    <div class="f">
+      <button (click)="addFavoriteDog(currentDog)">
+        Add to Favorites 💗
+      </button>
+    </div>
   </div>
 </div>

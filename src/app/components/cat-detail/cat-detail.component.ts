@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import catList from "src/assets/Catlist.json";
+import { FavoriteService } from "src/app/services/favorite.service";
 
 @Component({
   selector: "app-cat-detail",
@@ -12,14 +13,16 @@ export class CatDetailComponent implements OnInit {
 
   public catId;
   public cat = catList[this.catId];
-
+  public favorites = [];
   public currentCat;
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private favoriteService: FavoriteService
+  ) {}
 
-  ifNull() {
-    if (this.currentCat.environment.dogs === null) {
-      return "unknown";
-    }
+  addFavoriteCat(cat) {
+    this.favoriteService.addFavoriteCat(cat);
+    console.log(this.favoriteService.favorites);
   }
 
   ngOnInit() {
@@ -27,7 +30,5 @@ export class CatDetailComponent implements OnInit {
     this.catId = id;
 
     this.currentCat = catList[this.catId];
-
-    
   }
 }

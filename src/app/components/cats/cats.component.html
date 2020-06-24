@@ -1,15 +1,23 @@
 <div class="header">
+  <button class="home" [routerLink]="['/home/']">Home 🐾</button>
   <h1>Cats 🐱</h1>
-  <button class="favButton" [routerLink]="['/favorites/']">My Favorites 💗</button>
+
+  <button class="favButton" [routerLink]="['/favorites/']">
+    My Favorites 💗
+  </button>
 </div>
 <ul>
   <li *ngFor="let cat of Cats; index as id">
+    <script>
+      cat.isFavorite = false;
+    </script>
     <a [routerLink]="['/cats/', id]">
       <h2>{{ cat.name }}</h2>
+
+      <div *ngIf="cat.photos[0] !== undefined" class="img">
+        <img src="{{ cat.photos[0].medium }}" />
+      </div>
     </a>
-    <div *ngIf="cat.photos[0] !== undefined" class="img">
-      <img src="{{ cat.photos[0].medium }}" />
-    </div>
     <div class="breeds">
       <p>{{ cat.breeds.primary }}</p>
       <div class="breeds" *ngIf="cat.breeds.secondary !== null">
@@ -26,6 +34,8 @@
 
       <p>{{ cat.size }}</p>
     </div>
-    <button (click)="addFavoriteCat(cat)">Add to Favorites 💗</button>
+    <button (click)="addFavoriteCat(cat)">
+      Add to Favorites 💗
+    </button>
   </li>
 </ul>

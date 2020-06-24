@@ -1,0 +1,18 @@
+.main {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.main button {
+  width: 15%;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #8d1d67;
+  color: white;
+}
+
+h2 {
+  margin-top: 45px;
+}

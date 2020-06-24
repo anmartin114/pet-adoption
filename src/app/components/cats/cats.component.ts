@@ -16,10 +16,12 @@ export class CatsComponent implements OnInit {
 
   Cats: [] = catList;
   favorites = [];
+  
 
   addFavoriteCat(cat) {
     this.favoriteService.addFavoriteCat(cat);
     console.log(this.favoriteService.favorites);
+    
   }
 
   ngOnInit() {}

@@ -56,3 +56,9 @@ span {
 .q {
   font-weight: bold;
 }
+
+.f {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}

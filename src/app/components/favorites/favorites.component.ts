@@ -10,6 +10,8 @@ import { Router } from "@angular/router";
 export class FavoritesComponent implements OnInit {
   favorites: any;
   id: any;
+  isFavorite: boolean;
+
   constructor(
     private favoriteService: FavoriteService,
     public router: Router
